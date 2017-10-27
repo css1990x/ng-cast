@@ -3,9 +3,11 @@ angular.module('video-player')
   controller: function() {
     this.videos = exampleVideoData;
     this.currentVideo = exampleVideoData[0];
-  },
-  templateUrl: 'src/templates/app.html',
-  bindings: {
     
-  }
+    this.titleClick = (video) => {
+      console.log(video);
+      this.currentVideo = video;
+    }; 
+  },
+  templateUrl: 'src/templates/app.html'
 });
