@@ -9,7 +9,7 @@ angular.module('video-player')
     };
     
     this.search = () => {
-      youTube.jurassicPark();
+      youTube.search();
     };
   },
   templateUrl: 'src/templates/app.html'
