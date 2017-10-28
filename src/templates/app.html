@@ -2,15 +2,15 @@
   <nav class="navbar">
     <div class="col-md-6 col-md-offset-3">
     <img src="cjtube.png" id="logo">
-      <search on-search="$ctrl.search" call-search="$ctrl.search"></search>
+      <search on-search="$ctrl.search"></search>
     </div>
   </nav>
   <div class="row">
     <div class="col-md-7">
-      <video-player cv-full-details="$ctrl.cvFullDetails" cv="$ctrl.currentVideo" get-full-details="$ctrl.getFullDetails"></video-player>
+      <video-player cv-full-details="$ctrl.cvFullDetails" cv="$ctrl.currentVideo" get-full-details="$ctrl.getFullDetails" auto-play="$ctrl.autoPlay"></video-player>
     </div>
     <div class="col-md-5">
-      <video-list videos="$ctrl.videos" on-click="$ctrl.selectVideo"></video-list>
+      <video-list videos="$ctrl.videos" on-click="$ctrl.selectVideo" auto-play="$ctrl.autoPlay" toggle-auto-play="$ctrl.toggleAutoPlay"></video-list>
     </div>
   <div>
 </div>

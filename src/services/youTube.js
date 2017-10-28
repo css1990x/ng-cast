@@ -4,7 +4,7 @@ angular.module('video-player')
     console.log('hold on to your butts');
   };
   
-  this.search = function(query, callback) {
+  this.search = function(query, callback, token = '') {
     var url = 'https://www.googleapis.com/youtube/v3/search';
     var data = {
       params: {
@@ -12,9 +12,10 @@ angular.module('video-player')
         key: window.YOUTUBE_API_KEY,
         part: 'snippet',
         q: query,
-        safeSearch: 'strict',
+        safeSearch: 'moderate',
         type: 'video',
-        videoEmbeddable: 'true'
+        videoEmbeddable: 'true',
+        pageToken: 'CAUQAA'
       }
     };
     

@@ -73,6 +73,10 @@ body {
   padding: 8px;
 }
 
+.vid-list-button {
+  margin-left: 8px;
+}
+
 .video-list-entry-title {
   font-weight: bold;
 }

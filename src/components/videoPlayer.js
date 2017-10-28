@@ -5,11 +5,13 @@ angular.module('video-player')
   bindings: {
     cv: '<',
     cvFullDetails: '<',
-    getFullDetails: '<'
+    getFullDetails: '<',
+    autoPlay: '<'
   }
 })
 .filter('youtubeEmbedUrl', function($sce) {
   return function(videoId) {
+    console.log(videoId);
     return $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + videoId);
   };
 });
