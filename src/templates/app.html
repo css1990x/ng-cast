@@ -6,7 +6,7 @@
   </nav>
   <div class="row">
     <div class="col-md-7">
-      <video-player cv="$ctrl.currentVideo"></video-player>
+      <video-player cv-full-details="$ctrl.cvFullDetails" cv="$ctrl.currentVideo" get-full-details="$ctrl.getFullDetails"></video-player>
     </div>
     <div class="col-md-5">
       <video-list videos="$ctrl.videos" on-click="$ctrl.selectVideo"></video-list>

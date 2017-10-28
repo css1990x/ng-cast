@@ -4,7 +4,7 @@ angular.module('video-player')
     console.log('hold on to your butts');
   };
   
-  this.search = function (query, callback) {
+  this.search = function(query, callback) {
     var url = 'https://www.googleapis.com/youtube/v3/search';
     var data = {
       params: {
@@ -17,8 +17,6 @@ angular.module('video-player')
         videoEmbeddable: 'true'
       }
     };
-    // url = appendDataToUrl(url, data);
-    console.log('window', window.YOUTUBE_API_KEY);
     
     $http.get(url, data).then(function success(response) {
       console.log('Success:', response);
@@ -27,9 +25,23 @@ angular.module('video-player')
       console.log('Failure:', response);
     });
   };
+  
+  this.ytFullDetails = function(video, callback) {
+    var url = 'https://www.googleapis.com/youtube/v3/videos';
+    var data = {
+      params: {
+        key: window.YOUTUBE_API_KEY,
+        id: video.id.videoId,
+        part: 'snippet'
+      }
+    };
+    
+    $http.get(url, data).then(function success(response) {
+      console.log('Success:', response);
+      callback(response.data.items[0].snippet.description);
+    }, function error(response) {
+      console.log('Failure:', response);
+    });
+  };
+  
 });
-
-var appendDataToUrl = (url, data) => {
-  Object.keys(data).forEach(key => url.searchParams.append(key, data[key]));
-  return url;
-};

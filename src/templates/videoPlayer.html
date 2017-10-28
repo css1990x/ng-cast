@@ -4,6 +4,7 @@
   </div>
   <div class="video-player-details">
     <h3>{{$ctrl.cv.snippet.title}}</h3>
-    <div>{{$ctrl.cv.snippet.description}}</div>
+    <div>{{$ctrl.cvFullDetails || $ctrl.cv.snippet.description}}</div>
+    <p class="show-more" ng-click="$ctrl.getFullDetails()">{{($ctrl.cvFullDetails ? '' : 'Show More')}}</p>
   </div>
 </div>

@@ -50,6 +50,16 @@ body {
   margin-top: 10px;
 }
 
+.show-more {
+  padding: 10px 0 0;
+  color: blue;
+  cursor: pointer;
+}
+
+.show-more:hover {
+  text-decoration: underline
+}
+
 .video-list {
   background: #fff;
   padding: 8px;
