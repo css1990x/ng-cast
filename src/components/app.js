@@ -1,13 +1,16 @@
 angular.module('video-player')
 .component('app', {
-  controller: function() {
+  controller: function(youTube) {
     this.videos = exampleVideoData;
     this.currentVideo = exampleVideoData[0];
     
-    this.titleClick = (video) => {
-      console.log(video);
+    this.selectVideo = (video) => {
       this.currentVideo = video;
-    }; 
+    };
+    
+    this.search = () => {
+      youTube.jurassicPark();
+    };
   },
   templateUrl: 'src/templates/app.html'
 });

@@ -1,7 +1,7 @@
 <div id="app container">
   <nav class="navbar">
     <div class="col-md-6 col-md-offset-3">
-      <search><h5><em>search</em> component goes here</h5></search>
+      <search on-search="$ctrl.search"></search>
     </div>
   </nav>
   <div class="row">
@@ -9,7 +9,7 @@
       <video-player cv="$ctrl.currentVideo"></video-player>
     </div>
     <div class="col-md-5">
-      <video-list videos="$ctrl.videos" on-click="$ctrl.titleClick"></video-list>
+      <video-list videos="$ctrl.videos" on-click="$ctrl.selectVideo"></video-list>
     </div>
   <div>
 </div>
