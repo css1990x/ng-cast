@@ -14,6 +14,7 @@ angular.module('video-player')
     }, 500);
     
     this.searchClickMethodWrapper = () => {
+      this.debouncedSearch.cancel();
       this.onSearch(this.searchString);
       this.searchString = '';
     };
