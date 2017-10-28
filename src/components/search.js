@@ -8,5 +8,10 @@ angular.module('video-player')
   },
   controller: function() {
     this.searchString = '';
+    
+    this.searchClickMethodWrapper = () => {
+      this.onSearch(this.searchString);
+      this.searchString = '';
+    };
   }
 });
