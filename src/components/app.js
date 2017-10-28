@@ -6,8 +6,8 @@ angular.module('video-player')
     this.cvFullDetails = '';
     this.autoPlay = 0;
     this.lastQuery = '';
-    this.prevPageToken = '';
-    this.nextPageToken = '';
+    this.prevPageToken;
+    this.nextPageToken;
     
     this.selectVideo = (video) => {
       this.currentVideo = video;
@@ -15,8 +15,8 @@ angular.module('video-player')
     };
     
     this.search = (query) => {
-      this.lastQuery = query;
       youTube.search(query, this.searchResults);
+      this.lastQuery = query;
     };
     
     this.searchResults = (results) => {
@@ -45,11 +45,13 @@ angular.module('video-player')
     this.changeResults = (direction) => {
       if (direction === 'prev') {
         youTube.search(this.lastQuery, this.searchResults, this.prevPageToken);
+      } else if (direction === 'next') {
+        youTube.search(this.lastQuery, this.searchResults, this.nextPageToken);
       }
     };
     
-    
-    youTube.search('Sometimes things that are expensive', this.searchResults);
+    // youTube.search('Sometimes things that are expensive', this.searchResults);
+    this.search('Sometimes things that are expensive');
   },
   templateUrl: 'src/templates/app.html'
 });

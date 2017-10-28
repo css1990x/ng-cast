@@ -5,6 +5,9 @@ angular.module('video-player')
     videos: '<',
     onClick: '<',
     autoPlay: '<',
-    toggleAutoPlay: '<'
+    toggleAutoPlay: '<',
+    changeResults: '<',
+    prevPageToken: '<',
+    nextPageToken: '<'
   }
 });

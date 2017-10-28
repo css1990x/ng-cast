@@ -15,7 +15,7 @@ angular.module('video-player')
         safeSearch: 'moderate',
         type: 'video',
         videoEmbeddable: 'true',
-        pageToken: 'CAUQAA'
+        pageToken: token
       }
     };
     

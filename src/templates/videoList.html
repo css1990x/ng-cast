@@ -1,6 +1,6 @@
 <ul class="video-list">
-  <button class="vid-list-button" ng-click="$ctrl.toggleAutoPlay()">{{$ctrl.autoPlay ? 'Turn On Autoplay' : 'Turn Off Autoplay'}}</button>
+  <button class="vid-list-button" ng-click="$ctrl.toggleAutoPlay()">{{!$ctrl.autoPlay ? 'Turn On Autoplay' : 'Turn Off Autoplay'}}</button>
   <video-list-entry ng-repeat="video in $ctrl.videos" video="$ctrl.videos[$index]" on-click="$ctrl.onClick"></video-list-entry>
-  <!-- <button class="vid-list-button">Previous</button>
-  <button class="vid-list-button">Next</button> -->
+  <button class="vid-list-button" ng-click="$ctrl.changeResults('prev')" ng-show="$ctrl.prevPageToken">Previous</button>
+  <button class="vid-list-button" ng-click="$ctrl.changeResults('next')" ng-show="$ctrl.nextPageToken">Next</button>
 </ul>
