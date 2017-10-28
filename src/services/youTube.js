@@ -12,6 +12,7 @@ angular.module('video-player')
         key: window.YOUTUBE_API_KEY,
         part: 'snippet',
         q: query,
+        safeSearch: 'strict',
         type: 'video',
         videoEmbeddable: 'true'
       }
