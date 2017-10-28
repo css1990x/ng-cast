@@ -9,9 +9,10 @@ body {
   margin-bottom: 20px;
 }
 
-.navbar img {
-  height: 40px;
-  width: 50px;
+#logo {
+  height: 30px;
+  margin-top: 1px;
+  margin-bottom: 10px;
 }
 
 .search-bar {
