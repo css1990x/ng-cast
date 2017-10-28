@@ -9,6 +9,10 @@ angular.module('video-player')
   controller: function() {
     this.searchString = '';
     
+    this.debouncedSearch = _.debounce(() => {
+      this.onSearch(this.searchString);
+    }, 500);
+    
     this.searchClickMethodWrapper = () => {
       this.onSearch(this.searchString);
       this.searchString = '';
