@@ -4,14 +4,14 @@ angular.module('video-player')
     console.log('hold on to your butts');
   };
   
-  this.search = function () {
-    var url = new URL('https://www.googleapis.com/youtube/v3/search');
+  this.search = function (query, callback) {
+    var url = 'https://www.googleapis.com/youtube/v3/search';
     var data = {
       params: {
         maxResults: 5,
         key: window.YOUTUBE_API_KEY,
         part: 'snippet',
-        q: 'James Terry',
+        q: query,
         type: 'video',
         videoEmbeddable: 'true'
       }
@@ -19,8 +19,9 @@ angular.module('video-player')
     // url = appendDataToUrl(url, data);
     console.log('window', window.YOUTUBE_API_KEY);
     
-    $http.get('https://www.googleapis.com/youtube/v3/search', data).then(function success(response) {
+    $http.get(url, data).then(function success(response) {
       console.log('Success:', response);
+      callback(response.data);
     }, function error(response) {
       console.log('Failure:', response);
     });
